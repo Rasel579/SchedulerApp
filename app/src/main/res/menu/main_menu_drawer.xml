@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/scheduler_item_menu_drawer"
+        android:title="@string/scheduler"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/classes_item_menu_drawer"
+        android:title=""
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/homework_item_menu_drawer"
+        android:title="@string/homework_text_item_menu"
+        app:showAsAction="ifRoom"/>
+
+</menu>

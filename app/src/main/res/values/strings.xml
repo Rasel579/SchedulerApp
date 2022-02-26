@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SchedulerApp</string>
+    <string name="drawer_title">Main Title</string>
+    <string name="content_text_drawer_layout">content_text_drawer_layout</string>
+    <string name="scheduler">Scheduler</string>
+    <string name="homework_text_item_menu">Homework</string>
+    <string name="search_item_menu">Search</string>
+    <string name="filter_item_menu">Filter</string>
+    <string name="profile_item_menu">Profile</string>
+</resources>
