@@ -1,7 +1,7 @@
 import org.gradle.api.JavaVersion
 
 object Config {
-    const val APPLICATION_ID = "com.mwaiterdev.waiter"
+    const val APPLICATION_ID = "com.teck.schedulerapp"
     const val COMPILE_SDK = 31
     const val MIN_SDK_VERSION = 27
     const val TARGET_SDK = 31

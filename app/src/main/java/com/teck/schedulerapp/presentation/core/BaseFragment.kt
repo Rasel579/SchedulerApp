@@ -1,4 +1,4 @@
-package com.movieapp.mv_ted.presentation.core
+package com.teck.schedulerapp.presentation.core
 
 import android.os.Bundle
 import android.view.View

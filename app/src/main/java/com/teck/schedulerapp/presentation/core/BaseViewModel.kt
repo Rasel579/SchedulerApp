@@ -1,4 +1,4 @@
-package com.movieapp.mv_ted.presentation.core
+package com.teck.schedulerapp.presentation.core
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

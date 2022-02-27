@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="@string/home_bottom_app_bar"
+        android:icon="@drawable/icons8_search_50"
+        />
+    <item android:id="@+id/classes_bottom_menu_item"
+        android:title="@string/classes_bottom_app_bar"
+        android:icon="@drawable/icon_pupal"/>
+    <item android:id="@+id/scheduler_bottom_menu_item"
+        android:title="Scheduler"
+        android:icon="@drawable/icons8_parameters_66"/>
+    <item android:id="@+id/favorite_bottom_menu_item"
+        android:title="Scheduler"
+        android:icon="@drawable/icons8_search_50"/>
+
+
+</menu>
