@@ -1,9 +1,10 @@
 package com.teck.schedulerapp.presentation.main
 
-import androidx.lifecycle.ViewModel
+import android.os.Bundle
+import android.view.View
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.movieapp.mv_ted.presentation.core.BaseFragment
-import com.movieapp.mv_ted.presentation.core.BaseViewModel
+import com.teck.schedulerapp.presentation.core.BaseFragment
+import com.teck.schedulerapp.presentation.core.BaseViewModel
 import com.teck.schedulerapp.R
 import com.teck.schedulerapp.databinding.MainFragmentLayoutBinding
 import com.teck.schedulerapp.domain.AppState
@@ -19,6 +20,9 @@ class MainFragment: BaseFragment<MainFragmentLayoutBinding>(R.layout.main_fragme
         TODO("Not yet implemented")
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+    }
     companion object{
         fun newInstance() = MainFragment()
     }

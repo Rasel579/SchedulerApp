@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:fitsSystemWindows="true">
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,16 +24,70 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:menu="@menu/main_menu_drawer"
                 app:layout_collapseMode="pin"
+                app:menu="@menu/main_menu_drawer"
+                app:popupTheme="@style/Theme.SchedulerApp.PopupOverlay"
                 app:title="Hi, Mike!"
-                app:titleTextAppearance="@style/Toolbar.TitleText"
-                app:popupTheme="@style/Theme.SchedulerApp.PopupOverlay" />
+                app:titleTextAppearance="@style/Toolbar.TitleText" />
         </com.google.android.material.appbar.AppBarLayout>
     </com.google.android.material.appbar.AppBarLayout>
-    <include
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/navigation_chip_group"
+        style="@style/BottomNavigationView.Custom"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/round_corners"
+        app:checkedChip="@+id/home"
+        android:fitsSystemWindows="true"
+        app:singleSelection="true"
+        app:singleLine="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/home"
+            style="@style/ChipCustomNavigationItem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:checkable="true"
+            app:chipIcon="@drawable/icons8_health_data_96"
+            android:text="@string/chip_item_home"
+             />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/lessons"
+            style="@style/ChipCustomNavigationItem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:chipIcon="@drawable/icons8_task_planning_100"
+            android:checkable="true"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/list_tasks"
+            style="@style/ChipCustomNavigationItem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:chipIcon="@drawable/icons8_list_96"
+            android:checkable="true"
+           />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/star"
+            style="@style/ChipCustomNavigationItem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:chipIcon="@drawable/ic_baseline_star_24"
+            android:checkable="true"
+         />
+    </com.google.android.material.chip.ChipGroup>
+
+    <include xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/content_main_frame"
         layout="@layout/content_main"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".presentation.MainActivity"/>
+        tools:context=".presentation.MainActivity" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

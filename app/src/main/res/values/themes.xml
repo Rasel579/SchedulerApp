@@ -35,5 +35,24 @@
         <item name="android:textSize">28sp</item>
         <item name="android:gravity">center_vertical</item>
     </style>
+    <style name="BottomAppBar.TextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">10sp</item>
+        <item name="android:padding">50dp</item>
+        <item name="background">@drawable/item_selector_bottom_navigation</item>
+    </style>
+    <style name="BottomNavigationView.Custom"
+        parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:background">@color/primaryLightColor</item>
+    </style>
+    <style name="ChipCustomNavigationItem" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipBackgroundColor">@color/chip_background_selector</item>
+        <item name="android:textColor">@color/chip_text_color_selector</item>
+        <item name="chipCornerRadius">15dp</item>
+        <item name="chipIconSize">30dp</item>
+        <item name="checkedIconEnabled">false</item>
+        <item name="checkedIcon">@null</item>
+        <item name="iconStartPadding">8dp</item>
+    </style>
+
 
 </resources>

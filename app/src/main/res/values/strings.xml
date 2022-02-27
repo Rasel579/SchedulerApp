@@ -7,4 +7,10 @@
     <string name="search_item_menu">Search</string>
     <string name="filter_item_menu">Filter</string>
     <string name="profile_item_menu">Profile</string>
+    <string name="home_bottom_app_bar">Home</string>
+    <string name="classes_bottom_app_bar">Classes</string>
+    <string name="chip_item_home">Home</string>
+    <string name="chip_item_classes">Classes</string>
+    <string name="chip_item_tasks">Tasks</string>
+    <string name="chip_item_favorite">Favorite</string>
 </resources>
