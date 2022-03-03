@@ -1,13 +1,20 @@
 package com.teck.schedulerapp.presentation.classes
 
+import com.teck.schedulerapp.domain.AppState
+import com.teck.schedulerapp.domain.repository.Repository
 import com.teck.schedulerapp.presentation.core.BaseViewModel
+import kotlinx.coroutines.launch
 
-class ClassesViewModel: BaseViewModel() {
+class ClassesViewModel(private val repository: Repository): BaseViewModel() {
     override fun getData() {
-        TODO("Not yet implemented")
+        viewModelCoroutineScope.launch {
+            liveData.postValue(AppState.Success(repository.getData()))
+        }
     }
 
     override fun handleError(throwable: Throwable) {
-        TODO("Not yet implemented")
+        viewModelCoroutineScope.launch {
+            liveData.postValue(AppState.Error(throwable))
+        }
     }
 }

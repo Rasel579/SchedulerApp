@@ -13,4 +13,9 @@
     <string name="chip_item_classes">Classes</string>
     <string name="chip_item_tasks">Tasks</string>
     <string name="chip_item_favorite">Favorite</string>
+    <string name="homework_title_of_block">Homework</string>
+    <string name="minutes_title_of_watchers">Minutes</string>
+    <string name="hours_title_of_watchers">Hours</string>
+    <string name="days_title_of_watcher">Days</string>
+    <string name="time_divider_watcher">:</string>
 </resources>
