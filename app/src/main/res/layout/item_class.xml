@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="30dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/primaryLightColor">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.95"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/lesson_image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:scaleType="centerInside"
+                android:layout_marginStart="20dp"
+                android:src="@android:drawable/ic_popup_reminder"
+                android:background="@drawable/background_oval"
+                android:layout_gravity="center"
+                />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/title_of_lesson"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:textSize="18sp"
+                    android:gravity="bottom"
+                    android:layout_weight="1"
+                    android:text="History" />
+                <TextView
+                    android:id="@+id/time_of_lesson"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/light_color"
+                    android:text="08:00-10:00"
+                    app:drawableStartCompat="@android:drawable/ic_menu_recent_history" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/skype_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_lesson"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:rotation="90"
+                android:padding="1dp"
+                android:drawablePadding="3dp"
+                android:textSize="10sp"
+                android:text="Open In"
+                android:gravity="center"
+                app:drawableEndCompat="@android:drawable/ic_menu_camera"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</com.google.android.material.card.MaterialCardView>
