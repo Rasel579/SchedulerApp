@@ -1,7 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <View
+        android:id="@+id/scheduler"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/oval"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toTopOf="@id/decorator" />
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/scheduler"
+        app:layout_constraintTop_toTopOf="@id/scheduler"
+        app:layout_constraintBottom_toTopOf="@id/lesson"/>
+    <View
+        android:id="@+id/decorator"
+        android:layout_width="5dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/oval"
+        app:layout_constraintEnd_toStartOf="@id/lesson"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scheduler"/>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/lesson"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@color/primaryLightColor">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.95"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/lesson_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="centerInside"
+                    android:layout_marginStart="20dp"
+                    android:src="@android:drawable/ic_popup_reminder"
+                    android:background="@drawable/background_oval"
+                    android:layout_gravity="center"
+                    />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/title_of_lesson"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:textSize="18sp"
+                        android:gravity="bottom"
+                        android:layout_weight="1"
+                        android:text="History" />
+                    <TextView
+                        android:id="@+id/time_of_lesson"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:drawablePadding="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/light_color"
+                        android:text="08:00-10:00"
+                        app:drawableStartCompat="@android:drawable/ic_menu_recent_history" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/skype_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_lesson"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:rotation="90"
+                    android:padding="1dp"
+                    android:drawablePadding="3dp"
+                    android:textSize="10sp"
+                    android:text="Open In"
+                    android:gravity="center"
+                    app:drawableEndCompat="@android:drawable/ic_menu_camera"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

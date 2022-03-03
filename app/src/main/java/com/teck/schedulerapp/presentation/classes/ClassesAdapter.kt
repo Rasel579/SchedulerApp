@@ -2,12 +2,14 @@ package com.teck.schedulerapp.presentation.classes
 
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.teck.schedulerapp.data.model.Classes
 import com.teck.schedulerapp.data.model.Lesson
 import com.teck.schedulerapp.databinding.ItemClassBinding
+import com.teck.schedulerapp.databinding.ItemLessonBinding
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -16,9 +18,13 @@ class ClassesAdapter(
     private val duration: Long,
     private val formatter: DateTimeFormatter
 ) : RecyclerView.Adapter<ClassesAdapter.ClassesItem>() {
+    init {
+        data.lessons =  data.lessons.sortedBy { it.dateStart }
+        Log.e("data", data.lessons.toString())
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClassesItem = ClassesItem(
-        ItemClassBinding.inflate(LayoutInflater.from(parent.context))
+        ItemLessonBinding.inflate(LayoutInflater.from(parent.context))
     )
 
     override fun onBindViewHolder(holder: ClassesItem, position: Int) {
@@ -27,7 +33,7 @@ class ClassesAdapter(
 
     override fun getItemCount(): Int = data.lessons.size
 
-    inner class ClassesItem(private val viewBinding: ItemClassBinding) :
+    inner class ClassesItem(private val viewBinding: ItemLessonBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
         fun bind(lesson: Lesson) {
             val dateTime = LocalDateTime.parse(lesson.dateStart, formatter)
@@ -35,6 +41,7 @@ class ClassesAdapter(
             viewBinding.timeOfLesson.text =
                 "${dateTime.toLocalTime()} - ${dateTime.toLocalTime().plusMinutes(duration)}"
             viewBinding.lessonImage.setImageResource(lesson.image)
+            viewBinding.time.text = lesson.dateStart
             initListeners()
         }
 
