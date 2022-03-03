@@ -10,22 +10,7 @@ fun getMockData(): Classes = Classes(
     lessons = listOf(
         Lesson(
             title = "History",
-            dateStart = "15/03/2022 20:00",
-            image = R.drawable.icons8_man_student_48
-        ),
-        Lesson(
-            title = "Literature",
-            dateStart = "16/03/2022 20:00",
-            image = R.drawable.icons8_man_student_48
-        ),
-        Lesson(
-            title = "Physics",
-            dateStart = "17/03/2022 20:00",
-            image = R.drawable.icons8_man_student_48
-        ),
-        Lesson(
-            title = "History",
-            dateStart = "20/03/2022 20:00",
+            dateStart = "19/03/2022 20:00",
             image = R.drawable.icons8_man_student_48
         ),
         Lesson(
@@ -35,7 +20,22 @@ fun getMockData(): Classes = Classes(
         ),
         Lesson(
             title = "Physics",
-            dateStart = "19/03/2022 20:00",
+            dateStart = "20/03/2022 20:00",
+            image = R.drawable.icons8_man_student_48
+        ),
+        Lesson(
+            title = "History",
+            dateStart = "05/03/2022 20:00",
+            image = R.drawable.icons8_man_student_48
+        ),
+        Lesson(
+            title = "Literature",
+            dateStart = "05/03/2022 10:00",
+            image = R.drawable.icons8_man_student_48
+        ),
+        Lesson(
+            title = "Physics",
+            dateStart = "07/03/2022 20:00",
             image = R.drawable.icons8_man_student_48
         )
     ),
