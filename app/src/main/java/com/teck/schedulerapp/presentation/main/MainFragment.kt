@@ -1,6 +1,8 @@
 package com.teck.schedulerapp.presentation.main
 
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.util.Log
 import android.view.View
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.teck.schedulerapp.R
@@ -15,8 +17,10 @@ import com.teck.schedulerapp.presentation.main.adapters.HomeWorkAdapter
 import com.teck.schedulerapp.presentation.main.adapters.LessonsAdapter
 import org.koin.core.scope.Scope
 import java.time.LocalDateTime
+import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
-import kotlin.math.abs
+import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.seconds
 
 class MainFragment : BaseFragment<MainFragmentLayoutBinding>(R.layout.main_fragment_layout) {
     override val scope: Scope
@@ -54,23 +58,38 @@ class MainFragment : BaseFragment<MainFragmentLayoutBinding>(R.layout.main_fragm
 
     private fun addLessenWatcher(data: Classes) {
         val dateTime = LocalDateTime.parse(data.lessons.first().dateStart, formatter)
-        val dayDecimal =  (dateTime.dayOfYear - nowDate.dayOfYear)/10
-        val day =  (dateTime.dayOfYear - nowDate.dayOfYear)%10
-        val hoursDecimal =  (dateTime.hour - nowDate.hour)/10
-        val hour =  (dateTime.dayOfYear - nowDate.dayOfYear)%10
-        val minutesDecimal =  abs(dateTime.minute - nowDate.minute) /10
-        val minutes =  abs(dateTime.second - nowDate.second)%10
-        viewBinding.daysDecimal.text = dayDecimal.toString()
-        viewBinding.days.text = day.toString()
-        viewBinding.hoursDecimal.text = hoursDecimal.toString()
-        viewBinding.hours.text = hour.toString()
-        viewBinding.minutesDecimal.text = minutesDecimal.toString()
-        viewBinding.minutes.text = minutes.toString()
+        val different= dateTime.toEpochSecond(ZoneOffset.MAX) - nowDate.toEpochSecond(ZoneOffset.MAX)
+
+        object : CountDownTimer(different, COUNT_DOWN_LATCH){
+            override fun onTick(millisUntilFinished: Long) {
+                val tick = millisUntilFinished
+                val dayDecimal =  (tick/SECONDS_IN_SHIFT)/DECIMAL
+                val day = (tick/SECONDS_IN_SHIFT)%DECIMAL
+                val diffHour = tick%SECONDS_IN_SHIFT
+                val hoursDecimal = (diffHour/SECONDS_IN_HOUR)/DECIMAL
+                val hour = (diffHour/SECONDS_IN_HOUR)%SECONDS_IN_MINUTE
+                val diffMinutes = diffHour%SECONDS_IN_HOUR
+                val minutesDecimal = (diffMinutes/SECONDS_IN_MINUTE)/DECIMAL
+                val minutes = (diffMinutes/SECONDS_IN_MINUTE)%DECIMAL
+                viewBinding.daysDecimal.text = dayDecimal.toString()
+                viewBinding.days.text = day.toString()
+                viewBinding.hoursDecimal.text = hoursDecimal.toString()
+                viewBinding.hours.text = hour.toString()
+                viewBinding.minutesDecimal.text = minutesDecimal.toString()
+                viewBinding.minutes.text = minutes.toString()
+            }
+            override fun onFinish() {}
+        }.start()
     }
 
 
     companion object {
         fun newInstance() = MainFragment()
+        private const val  DECIMAL = 10
+        private const val  SECONDS_IN_SHIFT = 86400
+        private const val  SECONDS_IN_HOUR = 3600
+        private const val  SECONDS_IN_MINUTE = 60
+        private const val  COUNT_DOWN_LATCH = 1L
     }
 
 }
