@@ -96,7 +96,6 @@ class MainActivity : AppCompatActivity() {
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-        val navigationView = viewBinding.navView
     }
 
     private fun navigationFragment(fragment: Fragment) {

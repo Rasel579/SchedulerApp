@@ -11,32 +11,38 @@ fun getMockData(): Classes = Classes(
         Lesson(
             title = "History",
             dateStart = "19/03/2022 20:00",
-            image = R.drawable.icons8_man_student_48
+            image = R.drawable.icons8_man_student_48,
+            false
         ),
         Lesson(
             title = "Literature",
             dateStart = "18/03/2022 20:00",
-            image = R.drawable.icons8_man_student_48
+            image = R.drawable.icons8_man_student_48,
+            false
         ),
         Lesson(
             title = "Physics",
             dateStart = "20/03/2022 20:00",
-            image = R.drawable.icons8_man_student_48
+            image = R.drawable.icons8_man_student_48,
+            false
         ),
         Lesson(
             title = "History",
             dateStart = "05/03/2022 20:00",
-            image = R.drawable.icons8_man_student_48
+            image = R.drawable.icons8_man_student_48,
+            true
         ),
         Lesson(
             title = "Literature",
             dateStart = "05/03/2022 10:00",
-            image = R.drawable.icons8_man_student_48
+            image = R.drawable.icons8_man_student_48,
+            false
         ),
         Lesson(
             title = "Physics",
             dateStart = "07/03/2022 20:00",
-            image = R.drawable.icons8_man_student_48
+            image = R.drawable.icons8_man_student_48,
+            true
         )
     ),
     homeworks = listOf(

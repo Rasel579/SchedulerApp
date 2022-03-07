@@ -32,6 +32,7 @@ class BottomChipsNavigation(
         context.supportFragmentManager
             .beginTransaction()
             .replace(container, fragment)
+            .addToBackStack(null)
             .commit()
     }
 }
